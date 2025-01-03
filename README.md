@@ -4,6 +4,8 @@ SOLVING: Error npx create-react-app my-app --template typescript
 https://github.com/facebook/react/issues/31699
 
 
+Course Repo:
+https://github.com/john-smilga/react-course-v3
 
 
 
