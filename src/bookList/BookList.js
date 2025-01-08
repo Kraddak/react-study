@@ -58,9 +58,6 @@ const EventExamples = () => {
     console.log(`Input Value : ${e.target.value}`);
     // console.log('handle form input');
   };
-  const handleButtonClick = () => {
-    alert('handle button click');
-  };
   const handleFormSubmission = (e) => {
     e.preventDefault();
     console.log('form submitted');
@@ -73,13 +70,13 @@ const EventExamples = () => {
         <input
           type='text'
           name='example'
-          onChange={handleFormInput}
+          onChange={(e) => console.log(e.target.value)}
           style={{ margin: '1rem 0' }}
         />
         {/* add button with type='submit' */}
         <button type='submit'>submit form</button>
       </form>
-      <button onClick={handleButtonClick}>click me</button>
+      <button onClick={() => alert('handle button click')}>click me</button>
     </section>
   );
 };
