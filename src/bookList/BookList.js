@@ -23,63 +23,34 @@ const books = [ // array
 
 
 const BookList = () => {
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id);
+    console.log(book);
+  };
+
   return (
     <section className='booklist'>
-      <EventExamples />
       {books.map((book) => {
         // book = [{author, title, image, id},{...}]
-        return <Book {...book} key={book.id} />
+        return <Book {...book} key={book.id} buttonFunction={getBook} />
       })}
     </section>
   )
 }
 
 // children is a special keyword! Used to render stuff between components
-const Book = ({title, image, author, children}) => {
-  const handleButtonClick = () => {
-    alert('handle button click');
-  };
-  //const {title, image, author} = props
+const Book = ({title, image, author, buttonFunction, id, children}) => {
   return (
     <article className='book'>
       <img src={image} alt={title} />
       <h2>{title}</h2>
+      <button onClick={() => buttonFunction(id)}>click me</button>
       <h4 className='author'>{author.toUpperCase()}</h4>
       {children}
     </article>
   )
 }
 
-const EventExamples = () => {
-  const handleFormInput = (e) => {
-    console.log(e);
-    // e.target - element
-    console.log(`Input Name : ${e.target.name}`);
-    console.log(`Input Value : ${e.target.value}`);
-    // console.log('handle form input');
-  };
-  const handleFormSubmission = (e) => {
-    e.preventDefault();
-    console.log('form submitted');
-  };
-  return (
-    <section>
-      {/* add onSubmit Event Handler */}
-      <form onSubmit={handleFormSubmission}>
-        <h2>Typical Form</h2>
-        <input
-          type='text'
-          name='example'
-          onChange={(e) => console.log(e.target.value)}
-          style={{ margin: '1rem 0' }}
-        />
-        {/* add button with type='submit' */}
-        <button type='submit'>submit form</button>
-      </form>
-      <button onClick={() => alert('handle button click')}>click me</button>
-    </section>
-  );
-};
 
 
 const Book1 = (props) => {
@@ -151,6 +122,38 @@ const BookList2 = (props) => {
     </section>
   )
 }
+
+
+const EventExamples = () => {
+  const handleFormInput = (e) => {
+    console.log(e);
+    // e.target - element
+    console.log(`Input Name : ${e.target.name}`);
+    console.log(`Input Value : ${e.target.value}`);
+    // console.log('handle form input');
+  };
+  const handleFormSubmission = (e) => {
+    e.preventDefault();
+    console.log('form submitted');
+  };
+  return (
+    <section>
+      {/* add onSubmit Event Handler */}
+      <form onSubmit={handleFormSubmission}>
+        <h2>Typical Form</h2>
+        <input
+          type='text'
+          name='example'
+          onChange={(e) => console.log(e.target.value)}
+          style={{ margin: '1rem 0' }}
+        />
+        {/* add button with type='submit' */}
+        <button type='submit'>submit form</button>
+      </form>
+      <button onClick={() => alert('handle button click')}>click me</button>
+    </section>
+  );
+};
 
 
 
