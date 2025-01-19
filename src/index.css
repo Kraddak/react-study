@@ -66,3 +66,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* index.css or App.css */
+body {
+  background-color: darkgray;
+  margin: 0;
+  /* Remove default margin to avoid gaps */
+  height: 100vh;
+}
