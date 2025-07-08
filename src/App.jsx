@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Starter from './tutorial/01-useState/starter/04-useState-object'
+import Starter from './tutorial/03-conditional-rendering/starter/02-multiple-returns-fetch-data'
 
 function App() {
 
