@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import Starter from "./tutorial/07-useRef/starter/01-useRef-basics";
+import Starter from "./tutorial/08-custom-hooks/starter/02-fetch-data";
 
 function App() {
   return <Starter class="app"></Starter>;
