@@ -1,18 +1,20 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import Modal from "./sidebarModal/Modal";
-import Sidebar from "./sidebarModal/Sidebar";
-import Home from "./sidebarModal/Home";
+import { useGlobalContext } from "./strapi/Context";
 // import Starter from "./tutorial/09-context-api/starter/Navbar";
+import Navbar from "./strapi/Navbar";
+import Hero from "./strapi/Hero";
+import Sidebar from "./strapi/Sidebar";
+import Submenu from "./strapi/Submenu";
 
 function App() {
-  // return <Starter class="app"></Starter>;
   return (
     <main>
-      <Home />
-      <Modal />
+      <Navbar />
+      <Hero />
       <Sidebar />
+      <Submenu />
     </main>
   );
 }
