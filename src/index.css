@@ -324,7 +324,6 @@ Hero
   line-height: 1.5;
 }
 
-/*
 @media screen and (min-width: 992px) {
   .hero-center {
     text-align: center;
@@ -337,7 +336,6 @@ Hero
     display: none;
   }
 }
-    */
 
 /* 
 ============= 
@@ -360,7 +358,7 @@ Sidebar
   opacity: 1;
   visibility: visible;
   transition-property: opacity;
-  transition-duration: 1s;
+  transition-duration: 0.5s;
 }
 /* toggle class */
 
@@ -422,7 +420,6 @@ Nav Links
   .nav-links {
     display: flex;
     justify-content: center;
-
     align-self: stretch;
   }
   .nav-center {
@@ -447,6 +444,7 @@ Nav Links
 Submenu
 =============== 
 */
+
 .submenu {
   display: none;
 }
@@ -454,7 +452,7 @@ Submenu
   .submenu {
     display: block;
     position: fixed;
-    top: 7rem;
+    top: 5rem;
     left: 50%;
     width: var(--fluid-width);
     max-width: var(--max-width);
