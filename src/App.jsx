@@ -1,17 +1,22 @@
+import { ToastContainer } from "react-toastify";
+import { nanoid } from "nanoid";
+import Form from "./react-query/Form";
+import Items from "./react-query/Items";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Title from "./axios-tutorial/components/Title";
-import Setup from "./axios-tutorial/examples/6-interceptors";
-
-function App() {
+const defaultItems = [
+  { id: nanoid(), title: "walk the dog", isDone: false },
+  { id: nanoid(), title: "wash dishes", isDone: false },
+  { id: nanoid(), title: "drink coffee", isDone: true },
+  { id: nanoid(), title: "take a nap", isDone: false },
+];
+const App = () => {
+  const [items, setItems] = useState(defaultItems);
   return (
-    <main>
-      <Title></Title>
-      <Setup></Setup>
-    </main>
+    <section className="section-center">
+      <ToastContainer position="top-center" />
+      <Form />
+      <Items items={items} />
+    </section>
   );
-}
-
+};
 export default App;
