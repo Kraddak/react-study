@@ -2,6 +2,11 @@
 
 [Unsplash Images](https://www.figma.com/file/O2MaAAlr4nznh7m53azatL/Unsplash-images?node-id=0%3A1&t=cYDOCgqOs9IX2If0-1)
 
+// https://api.unsplash.com/photos/?client_id=YOUR_ACCESS_KEY
+
+Link example:
+https: https://api.unsplash.com/photos/?client_id=C_AMMs_o7JDns6pc1Y82_biIpwS-nSmJVbTwfRBRbMI&query=cat
+
 ## Steps
 
 #### Setup
