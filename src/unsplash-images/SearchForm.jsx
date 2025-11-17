@@ -1,8 +1,16 @@
-// import { useState } from "react";
+import { useGlobalContext } from "./ContextUnsplash";
+
 const SearchForm = () => {
+  const { searchTerm, setSearchTerm } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchValue = e.targets.elements.search.value;
+    const searchValue = e.target.elements.search.value;
+    if (!searchValue) {
+      console.log("no search term found!");
+      return;
+    }
+    console.log(searchValue);
+    setSearchTerm(searchValue);
   };
 
   return (
@@ -14,9 +22,7 @@ const SearchForm = () => {
             type="text"
             className="form-input search-input"
             placeholder="cat"
-            // .targets.elements.search
-            name="search"
-            onChange={() => {}}
+            name="search" // .targets.elements.search
           />
         </div>
         <button type="submit" className="btn">
@@ -28,10 +34,3 @@ const SearchForm = () => {
 };
 
 export default SearchForm;
-
-/*
-
-        <label htmlFor="name" className="form-label">
-          name
-        </label>
-*/

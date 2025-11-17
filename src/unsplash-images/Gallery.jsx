@@ -1,5 +1,6 @@
 // import { useState } from "react";
 
+import { useGlobalContext } from "./ContextUnsplash";
 import { useFetchImages } from "./UnsplashQueryHooks";
 
 const Gallery = () => {

@@ -3,8 +3,11 @@ import customFetch from "./utils";
 import { toast } from "react-toastify";
 
 import axios from "axios";
-const deleteMe =
-  "https://api.unsplash.com/search/photos?client_id=C_AMMs_o7JDns6pc1Y82_biIpwS-nSmJVbTwfRBRbMI&query=cat";
+import { useGlobalContext } from "./ContextUnsplash";
+
+// console.log(import.meta.env.VITE_API_KEY);
+const apiKey = import.meta.env.VITE_API_KEY;
+const url = `https://api.unsplash.com/search/photos?client_id=${apiKey}`;
 
 // https://api.unsplash.com/search/photos?query=cat&client_id=C_AMMs_o7JDns6pc1Y82_biIpwS-nSmJVbTwfRBRbMI
 
@@ -13,14 +16,14 @@ export const queryActions = {
 };
 
 export const useFetchImages = () => {
+  const { searchTerm } = useGlobalContext();
   const { isPending, data, isError, error } = useQuery({
-    queryKey: [queryActions.fetchImages],
-    // queryFn: () => customFetch.get("&query=cat"),
-    queryFn: () => axios.get(deleteMe),
+    queryKey: [queryActions.fetchImages, searchTerm],
+    queryFn: () => axios.get(`${url}&query=${searchTerm}`),
   });
-
   return { isPending, isError, data };
 };
+// queryFn: () => customFetch.get("&query=cat"),
 
 export const useEditTask = () => {
   const queryClient = useQueryClient();
