@@ -1,7 +1,7 @@
 import { useGlobalContext } from "./ContextUnsplash";
 
 const SearchForm = () => {
-  const { searchTerm, setSearchTerm } = useGlobalContext();
+  const { setSearchTerm } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     const searchValue = e.target.elements.search.value;

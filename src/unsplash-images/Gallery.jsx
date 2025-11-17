@@ -1,6 +1,5 @@
 // import { useState } from "react";
 
-import { useGlobalContext } from "./ContextUnsplash";
 import { useFetchImages } from "./UnsplashQueryHooks";
 
 const Gallery = () => {
@@ -33,9 +32,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
-/*
-{data.data.taskList.map((item) => {
-        return <SingleItem key={item.id} item={item} />;
-      })}
-*/
