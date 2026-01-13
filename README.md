@@ -24,15 +24,15 @@ npm i react-router-dom@6.11.2
 App.jsx
 
 ```js
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <h2>home page</h2>,
   },
   {
-    path: '/about',
+    path: "/about",
     element: (
       <div>
         <h2>about page</h2>
@@ -56,12 +56,12 @@ export default App;
 pages/index.js
 
 ```js
-export { default as Landing } from './Landing';
-export { default as About } from './About';
-export { default as Cocktail } from './Cocktail';
-export { default as Newsletter } from './Newsletter';
-export { default as HomeLayout } from './HomeLayout';
-export { default as Error } from './Error';
+export { default as Landing } from "./Landing";
+export { default as About } from "./About";
+export { default as Cocktail } from "./Cocktail";
+export { default as Newsletter } from "./Newsletter";
+export { default as HomeLayout } from "./HomeLayout";
+export { default as Error } from "./Error";
 ```
 
 App.jsx
@@ -74,7 +74,7 @@ import {
   Error,
   Newsletter,
   Cocktail,
-} from './pages';
+} from "./pages";
 ```
 
 #### Link Component
@@ -82,12 +82,12 @@ import {
 HomeLayout.jsx
 
 ```js
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const HomeLayout = () => {
   return (
     <div>
       <h1>HomeLayout</h1>
-      <Link to='/about'>About</Link>
+      <Link to="/about">About</Link>
     </div>
   );
 };
@@ -97,13 +97,13 @@ export default HomeLayout;
 About.jsx
 
 ```js
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <div>
       <h1>About</h1>
-      <Link to='/'>Back Home</Link>
+      <Link to="/">Back Home</Link>
     </div>
   );
 };
@@ -117,23 +117,23 @@ App.jsx
 ```js
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     children: [
       {
-        path: 'landing',
+        path: "landing",
         element: <Landing />,
       },
       {
-        path: 'cocktail',
+        path: "cocktail",
         element: <Cocktail />,
       },
       {
-        path: 'newsletter',
+        path: "newsletter",
         element: <Newsletter />,
       },
       {
-        path: 'about',
+        path: "about",
         element: <About />,
       },
     ],
@@ -144,7 +144,7 @@ const router = createBrowserRouter([
 HomeLayout.jsx
 
 ```js
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet } from "react-router-dom";
 const HomeLayout = () => {
   return (
     <div>
@@ -172,21 +172,21 @@ App.jsx
 Navbar.jsx
 
 ```js
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav>
-      <div className='nav-center'>
-        <span className='logo'>MixMaster</span>
-        <div className='nav-links'>
-          <NavLink to='/' className='nav-link'>
+      <div className="nav-center">
+        <span className="logo">MixMaster</span>
+        <div className="nav-links">
+          <NavLink to="/" className="nav-link">
             Home
           </NavLink>
-          <NavLink to='/about' className='nav-link'>
+          <NavLink to="/about" className="nav-link">
             About
           </NavLink>
-          <NavLink to='/newsletter' className='nav-link'>
+          <NavLink to="/newsletter" className="nav-link">
             Newsletter
           </NavLink>
         </div>
@@ -215,7 +215,7 @@ npm install styled-components
 ```
 
 ```js
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const El = styled.el`
   // styles go here
@@ -227,7 +227,7 @@ const El = styled.el`
 - colors and bugs
 
 ```js
-import styled from 'styled-components';
+import styled from "styled-components";
 const StyledBtn = styled.button`
   background: red;
   color: white;
@@ -261,22 +261,22 @@ const Component = () => {
 Navbar.jsx
 
 ```js
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const Navbar = () => {
   return (
     <Wrapper>
-      <div className='nav-center'>
-        <span className='logo'>MixMaster</span>
-        <div className='nav-links'>
-          <NavLink to='/' className='nav-link'>
+      <div className="nav-center">
+        <span className="logo">MixMaster</span>
+        <div className="nav-links">
+          <NavLink to="/" className="nav-link">
             Home
           </NavLink>
-          <NavLink to='/about' className='nav-link'>
+          <NavLink to="/about" className="nav-link">
             About
           </NavLink>
-          <NavLink to='/newsletter' className='nav-link'>
+          <NavLink to="/newsletter" className="nav-link">
             Newsletter
           </NavLink>
         </div>
@@ -342,7 +342,7 @@ export default Navbar;
 About.jsx
 
 ```jsx
-import Wrapper from '../assets/wrappers/AboutPage';
+import Wrapper from "../assets/wrappers/AboutPage";
 
 const About = () => {
   return (
@@ -368,13 +368,13 @@ export default About;
 HomeLayout.jsx
 
 ```js
-import { Link, Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import { Link, Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 const HomeLayout = () => {
   return (
     <>
       <Navbar />
-      <section className='page'>
+      <section className="page">
         <Outlet />
       </section>
     </>
@@ -401,9 +401,9 @@ index.css
 Error.jsx
 
 ```js
-import Wrapper from '../assets/wrappers/ErrorPage';
-import { Link, useRouteError } from 'react-router-dom';
-import img from '../assets/not-found.svg';
+import Wrapper from "../assets/wrappers/ErrorPage";
+import { Link, useRouteError } from "react-router-dom";
+import img from "../assets/not-found.svg";
 
 const Error = () => {
   const error = useRouteError();
@@ -412,10 +412,10 @@ const Error = () => {
     return (
       <Wrapper>
         <div>
-          <img src={img} alt='not found' />
+          <img src={img} alt="not found" />
           <h3>Ohh! </h3>
           <p>We can't seem to find the page you're looking for</p>
-          <Link to='/'>back home</Link>
+          <Link to="/">back home</Link>
         </div>
       </Wrapper>
     );
@@ -437,7 +437,7 @@ export default Error;
 assets/wrappers/ErrorPage.js
 
 ```js
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -480,7 +480,7 @@ Landing.jsx
 ```js
 const fetchSomething = async () => {
   try {
-    const response = await axios.get('/someUrl');
+    const response = await axios.get("/someUrl");
     console.log(response.data);
   } catch (error) {
     console.error(error);
@@ -501,10 +501,10 @@ Each route can define a "loader" function to provide data to the route element b
 Landing.jsx
 
 ```js
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from "react-router-dom";
 
 export const loader = async () => {
-  return 'something';
+  return "something";
 };
 
 const Landing = () => {
@@ -558,14 +558,14 @@ const router = createBrowserRouter([
 Landing.jsx
 
 ```js
-import { useLoaderData } from 'react-router-dom';
-import axios from 'axios';
+import { useLoaderData } from "react-router-dom";
+import axios from "axios";
 
 const cocktailSearchUrl =
-  'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
+  "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 export const loader = async () => {
-  const searchTerm = 'margarita';
+  const searchTerm = "margarita";
   const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
   return { drinks: response.data.drinks, searchTerm };
 };
@@ -593,7 +593,7 @@ App.jsx
 ```js
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
@@ -615,7 +615,7 @@ const router = createBrowserRouter([
 - use it in App.jsx
 
 ```js
-import { useRouteError } from 'react-router-dom';
+import { useRouteError } from "react-router-dom";
 const SinglePageError = () => {
   const error = useRouteError();
   console.log(error);
@@ -648,12 +648,12 @@ const Landing = () => {
 CocktailList.jsx
 
 ```jsx
-import CocktailCard from './CocktailCard';
-import Wrapper from '../assets/wrappers/CocktailList';
+import CocktailCard from "./CocktailCard";
+import Wrapper from "../assets/wrappers/CocktailList";
 const CocktailList = ({ drinks }) => {
   if (!drinks) {
     return (
-      <h4 style={{ textAlign: 'center' }}>No matching cocktails found...</h4>
+      <h4 style={{ textAlign: "center" }}>No matching cocktails found...</h4>
     );
   }
 
@@ -680,22 +680,22 @@ export default CocktailList;
 ```
 
 ```jsx
-import { Link, useOutletContext } from 'react-router-dom';
-import Wrapper from '../assets/wrappers/CocktailCard';
+import { Link, useOutletContext } from "react-router-dom";
+import Wrapper from "../assets/wrappers/CocktailCard";
 const CocktailCard = ({ image, name, id, info, glass }) => {
   // const data = useOutletContext();
   // console.log(data);
   return (
     <Wrapper>
-      <div className='img-container'>
-        <img src={image} alt={name} className='img' />
+      <div className="img-container">
+        <img src={image} alt={name} className="img" />
       </div>
-      <div className='footer'>
+      <div className="footer">
         <h4>{name}</h4>
         <h5>{glass}</h5>
         <p>{info}</p>
 
-        <Link to={`/cocktail/${id}`} className='btn'>
+        <Link to={`/cocktail/${id}`} className="btn">
           details
         </Link>
       </div>
@@ -713,19 +713,19 @@ export default CocktailCard;
 HomeLayout.jsx
 
 ```js
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import { useNavigation } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { useNavigation } from "react-router-dom";
 const HomeLayout = () => {
   const navigation = useNavigation();
-  const isPageLoading = navigation.state === 'loading';
-  const value = 'some value';
+  const isPageLoading = navigation.state === "loading";
+  const value = "some value";
   return (
     <>
       <Navbar />
-      <section className='page'>
+      <section className="page">
         {isPageLoading ? (
-          <div className='loading' />
+          <div className="loading" />
         ) : (
           <Outlet context={{ value }} />
         )}
@@ -741,16 +741,16 @@ export default HomeLayout;
 App.jsx
 
 ```js
-import { loader as singleCocktailLoader } from './pages/Cocktail';
+import { loader as singleCocktailLoader } from "./pages/Cocktail";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
       {
-        path: 'cocktail/:id',
+        path: "cocktail/:id",
         loader: singleCocktailLoader,
         element: <Cocktail />,
         errorElement: <SinglePageError />,
@@ -765,11 +765,11 @@ Cocktail.jsx
 
 ```js
 const singleCocktailUrl =
-  'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
-import { useLoaderData, Link } from 'react-router-dom';
-import axios from 'axios';
+  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+import { useLoaderData, Link } from "react-router-dom";
+import axios from "axios";
 
-import Wrapper from '../assets/wrappers/CocktailPage';
+import Wrapper from "../assets/wrappers/CocktailPage";
 
 export const loader = async ({ params }) => {
   const { id } = params;
@@ -791,45 +791,45 @@ const Cocktail = () => {
   } = singleDrink;
   const validIngredients = Object.keys(singleDrink)
     .filter(
-      (key) => key.startsWith('strIngredient') && singleDrink[key] !== null
+      (key) => key.startsWith("strIngredient") && singleDrink[key] !== null
     )
     .map((key) => singleDrink[key]);
 
   return (
     <Wrapper>
       <header>
-        <Link to='/' className='btn'>
+        <Link to="/" className="btn">
           back home
         </Link>
         <h3>{name}</h3>
       </header>
-      <div className='drink'>
-        <img src={image} alt={name} className='img'></img>
-        <div className='drink-info'>
+      <div className="drink">
+        <img src={image} alt={name} className="img"></img>
+        <div className="drink-info">
           <p>
-            <span className='drink-data'>name :</span> {name}
+            <span className="drink-data">name :</span> {name}
           </p>
           <p>
-            <span className='drink-data'>category :</span> {category}
+            <span className="drink-data">category :</span> {category}
           </p>
           <p>
-            <span className='drink-data'>info :</span> {info}
+            <span className="drink-data">info :</span> {info}
           </p>
           <p>
-            <span className='drink-data'>glass :</span> {glass}
+            <span className="drink-data">glass :</span> {glass}
           </p>
           <p>
-            <span className='drink-data'>ingredients :</span>
+            <span className="drink-data">ingredients :</span>
             {validIngredients.map((item, index) => {
               return (
-                <span className='ing' key={item}>
-                  {item} {index < validIngredients.length - 1 ? ',' : ''}
+                <span className="ing" key={item}>
+                  {item} {index < validIngredients.length - 1 ? "," : ""}
                 </span>
               );
             })}
           </p>
           <p>
-            <span className='drink-data'>instructons :</span> {instructions}
+            <span className="drink-data">instructons :</span> {instructions}
           </p>
         </div>
       </div>
@@ -844,10 +844,10 @@ export default Cocktail;
 
 ```js
 const Cocktail = () => {
-  import { Navigate } from 'react-router-dom';
+  import { Navigate } from "react-router-dom";
   const { id, data } = useLoaderData();
   // if (!data) return <h2>something went wrong...</h2>;
-  if (!data) return <Navigate to='/' />;
+  if (!data) return <Navigate to="/" />;
   return <Wrapper>....</Wrapper>;
 };
 ```
@@ -857,7 +857,7 @@ const Cocktail = () => {
 assets/wrappers/CocktailPage.js
 
 ```js
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   header {
@@ -915,12 +915,12 @@ export default Wrapper;
 main.jsx
 
 ```js
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ToastContainer position='top-center' autoClose={2000} />
+    <ToastContainer position="top-center" autoClose={2000} />
     <App />
   </React.StrictMode>
 );
@@ -933,53 +933,53 @@ Newsletter.jsx
 ```js
 const Newsletter = () => {
   return (
-    <form className='form'>
-      <h4 style={{ textAlign: 'center', marginBottom: '2rem' }}>
+    <form className="form">
+      <h4 style={{ textAlign: "center", marginBottom: "2rem" }}>
         our newsletter
       </h4>
       {/* name */}
-      <div className='form-row'>
-        <label htmlFor='name' className='form-label'>
+      <div className="form-row">
+        <label htmlFor="name" className="form-label">
           name
         </label>
         <input
-          type='text'
-          className='form-input'
-          name='name'
-          id='name'
-          defaultValue='john'
+          type="text"
+          className="form-input"
+          name="name"
+          id="name"
+          defaultValue="john"
         />
       </div>
       {/* last name */}
-      <div className='form-row'>
-        <label htmlFor='lastName' className='form-label'>
+      <div className="form-row">
+        <label htmlFor="lastName" className="form-label">
           last name
         </label>
         <input
-          type='text'
-          className='form-input'
-          name='lastName'
-          id='lastName'
-          defaultValue='smith'
+          type="text"
+          className="form-input"
+          name="lastName"
+          id="lastName"
+          defaultValue="smith"
         />
       </div>
       {/* name */}
-      <div className='form-row'>
-        <label htmlFor='email' className='form-label'>
+      <div className="form-row">
+        <label htmlFor="email" className="form-label">
           email
         </label>
         <input
-          type='email'
-          className='form-input'
-          name='email'
-          id='email'
-          defaultValue='test@test.com'
+          type="email"
+          className="form-input"
+          name="email"
+          id="email"
+          defaultValue="test@test.com"
         />
       </div>
       <button
-        type='submit'
-        className='btn btn-block'
-        style={{ marginTop: '0.5rem' }}
+        type="submit"
+        className="btn btn-block"
+        style={{ marginTop: "0.5rem" }}
       >
         submit
       </button>
@@ -1040,15 +1040,15 @@ const Newsletter = () => {
 App.jsx
 
 ```js
-import { action as newsletterAction } from './pages/Newsletter';
+import { action as newsletterAction } from "./pages/Newsletter";
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
       {
-        path: 'newsletter',
+        path: "newsletter",
         action: newsletterAction,
         element: <Newsletter />,
       },
@@ -1064,11 +1064,11 @@ const newsletterUrl = 'https://www.course-api.com/cocktails-newsletter';
 Newsletter.jsx
 
 ```js
-import { Form, redirect } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import { Form, redirect } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-const newsletterUrl = 'https://www.course-api.com/cocktails-newsletter';
+const newsletterUrl = "https://www.course-api.com/cocktails-newsletter";
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -1085,8 +1085,8 @@ export const action = async ({ request }) => {
 Newsletter.jsx
 
 ```js
-import { redirect } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { redirect } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -1095,7 +1095,7 @@ export const action = async ({ request }) => {
     const response = await axios.post(newsletterUrl, data);
     console.log(response);
     toast.success(response.data.msg);
-    return redirect('/');
+    return redirect("/");
   } catch (error) {
     console.log(error);
     toast.error(error?.response?.data?.msg);
@@ -1109,21 +1109,21 @@ export const action = async ({ request }) => {
 Newsletter.jsx
 
 ```js
-import { Form, useNavigation } from 'react-router-dom';
+import { Form, useNavigation } from "react-router-dom";
 
 const Newsletter = () => {
   const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const isSubmitting = navigation.state === "submitting";
   return (
-    <Form className='form' method='POST'>
+    <Form className="form" method="POST">
       ....
       <button
-        type='submit'
-        className='btn btn-block'
-        style={{ marginTop: '0.5rem' }}
+        type="submit"
+        className="btn btn-block"
+        style={{ marginTop: "0.5rem" }}
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'submitting...' : 'submit'}
+        {isSubmitting ? "submitting..." : "submit"}
       </button>
     </Form>
   );
@@ -1140,22 +1140,22 @@ const Newsletter = () => {
 components/SearchForm.jsx
 
 ```js
-import { Form, useNavigation } from 'react-router-dom';
-import Wrapper from '../assets/wrappers/SearchForm';
+import { Form, useNavigation } from "react-router-dom";
+import Wrapper from "../assets/wrappers/SearchForm";
 const SearchForm = () => {
   const navigation = useNavigation();
-  const isSubmitting = navigation.state === 'submitting';
+  const isSubmitting = navigation.state === "submitting";
   return (
     <Wrapper>
-      <Form className='form'>
+      <Form className="form">
         <input
-          type='search'
-          name='search'
-          className='form-input'
-          defaultValue='vodka'
+          type="search"
+          name="search"
+          className="form-input"
+          defaultValue="vodka"
         />
-        <button type='submit' className='btn' disabled={isSubmitting}>
-          {isSubmitting ? 'searching...' : 'search'}
+        <button type="submit" className="btn" disabled={isSubmitting}>
+          {isSubmitting ? "searching..." : "search"}
         </button>
       </Form>
     </Wrapper>
@@ -1172,7 +1172,7 @@ Landing.jsx
 ```js
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  const searchTerm = url.searchParams.get('search') || '';
+  const searchTerm = url.searchParams.get("search") || "";
   const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
   return { drinks: response.data.drinks, searchTerm };
 };
@@ -1211,11 +1211,11 @@ SearchForm.jsx
 const SearchForm = ({ searchTerm }) => {
   return (
     <Wrapper>
-      <Form className='form'>
+      <Form className="form">
         <input
-          type='search'
-          name='search'
-          className='form-input'
+          type="search"
+          name="search"
+          className="form-input"
           defaultValue={searchTerm}
         />
         .....
@@ -1265,14 +1265,14 @@ Since the API does not return drinks with empty searchTerm, code below contains 
 Landing.jsx
 
 ```js
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 const searchCocktailsQuery = (searchTerm) => {
   return {
-    queryKey: ['search', searchTerm || 'all'],
+    queryKey: ["search", searchTerm || "all"],
     queryFn: async () => {
       // Default to 'a' if no search term is provided since API has changed
-      searchTerm = searchTerm || 'a';
+      searchTerm = searchTerm || "a";
 
       const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
       return response.data.drinks;
@@ -1282,7 +1282,7 @@ const searchCocktailsQuery = (searchTerm) => {
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  const searchTerm = url.searchParams.get('search') || '';
+  const searchTerm = url.searchParams.get("search") || "";
   // const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
   return { searchTerm };
 };
@@ -1308,7 +1308,7 @@ App.jsx
 ```js
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <Error />,
     children: [
@@ -1329,7 +1329,7 @@ export const loader =
   (queryClient) =>
   async ({ request }) => {
     const url = new URL(request.url);
-    const searchTerm = url.searchParams.get('search') || '';
+    const searchTerm = url.searchParams.get("search") || "";
     await queryClient.ensureQueryData(searchCocktailsQuery(searchTerm));
     // const response = await axios.get(`${cocktailSearchUrl}${searchTerm}`);
     return { searchTerm };
@@ -1363,17 +1363,17 @@ const router = createBrowserRouter([
 Cocktail.jsx
 
 ```js
-import { useQuery } from '@tanstack/react-query';
-import Wrapper from '../assets/wrappers/CocktailPage';
-import { useLoaderData, Link } from 'react-router-dom';
-import axios from 'axios';
+import { useQuery } from "@tanstack/react-query";
+import Wrapper from "../assets/wrappers/CocktailPage";
+import { useLoaderData, Link } from "react-router-dom";
+import axios from "axios";
 
 const singleCocktailUrl =
-  'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
+  "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 const singleCocktailQuery = (id) => {
   return {
-    queryKey: ['cocktail', id],
+    queryKey: ["cocktail", id],
     queryFn: async () => {
       const { data } = await axios.get(`${singleCocktailUrl}${id}`);
       return data;

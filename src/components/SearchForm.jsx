@@ -1,0 +1,25 @@
+//
+import { Form, redirect, useNavigation } from "react-router-dom";
+import axios from "axios";
+import Wrapper from "../assets/wrappers/SearchForm";
+
+const SearchForm = ({ searchTerm }) => {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
+  return (
+    <Wrapper>
+      <Form className="form">
+        <input
+          type="search"
+          name="search"
+          className="form-input"
+          defaultValue={searchTerm}
+        ></input>
+        <button type="submit" className="btn" disabled={isSubmitting}>
+          {isSubmitting ? "searching..." : "search"}
+        </button>
+      </Form>
+    </Wrapper>
+  );
+};
+export default SearchForm;
